@@ -1,0 +1,17 @@
+.card {
+    align-items: center;
+    background-color: var(--grayscale-white);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: auto;
+    padding: 150px 15% 5% 15%;
+    position: relative;
+}
+
+.img {
+    position: absolute;
+    top: calc(0px - 150px);
+    height: 270px;
+    width: auto;
+}

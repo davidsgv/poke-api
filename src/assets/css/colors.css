@@ -1,0 +1,287 @@
+.color-pokemon-bug {
+    color: var(--pokemon-type-bug);
+}
+
+.color-pokemon-dark {
+    color: var(--pokemon-type-dark);
+}
+
+.color-pokemon-dragon {
+    color: var(--pokemon-type-dragon);
+}
+
+.color-pokemon-electric {
+    color: var(--pokemon-type-electric);
+}
+
+.color-pokemon-fairy {
+    color: var(--pokemon-type-fairy);
+}
+
+.color-pokemon-fighting {
+    color: var(--pokemon-type-fighting);
+}
+
+.color-pokemon-fire {
+    color: var(--pokemon-type-fire);
+}
+
+.color-pokemon-flying {
+    color: var(--pokemon-type-flying);
+}
+
+.color-pokemon-ghost {
+    color: var(--pokemon-type-ghost);
+}
+
+.color-pokemon-normal {
+    color: var(--pokemon-type-normal);
+}
+
+.color-pokemon-grass {
+    color: var(--pokemon-type-grass);
+}
+
+.color-pokemon-ground {
+    color: var(--pokemon-type-ground);
+}
+
+.color-pokemon-ice {
+    color: var(--pokemon-type-ice);
+}
+
+.color-pokemon-poison {
+    color: var(--pokemon-type-poison);
+}
+
+.color-pokemon-psychic {
+    color: var(--pokemon-type-psychic);
+}
+
+.color-pokemon-rock {
+    color: var(--pokemon-type-rock);
+}
+
+.color-pokemon-steel {
+    color: var(--pokemon-type-steel);
+}
+
+.color-pokemon-water {
+    color: var(--pokemon-type-water);
+}
+
+.color-grayscale-dark {
+    color: var(--grayscale-dark)
+}
+
+.color-grayscale-medium {
+    color: var(--grayscale-medium)
+}
+
+.color-grayscale-light {
+    color: var(--grayscale-light)
+}
+
+.color-grayscale-background {
+    color: var(--grayscale-background)
+}
+
+.color-grayscale-white {
+    color: var(--grayscale-white)
+}
+
+
+
+.background-color-pokemon-bug {
+    background-color: var(--pokemon-type-bug);
+}
+
+.background-color-pokemon-bug {
+    background-color: var(--pokemon-type-bug);
+}
+
+.background-color-pokemon-dark {
+    background-color: var(--pokemon-type-dark);
+}
+
+.background-color-pokemon-dragon {
+    background-color: var(--pokemon-type-dragon);
+}
+
+.background-color-pokemon-electric {
+    background-color: var(--pokemon-type-electric);
+}
+
+.background-color-pokemon-fairy {
+    background-color: var(--pokemon-type-fairy);
+}
+
+.background-color-pokemon-fighting {
+    background-color: var(--pokemon-type-fighting);
+}
+
+.background-color-pokemon-fire {
+    background-color: var(--pokemon-type-fire);
+}
+
+.background-color-pokemon-flying {
+    background-color: var(--pokemon-type-flying);
+}
+
+.background-color-pokemon-ghost {
+    background-color: var(--pokemon-type-ghost);
+}
+
+.background-color-pokemon-normal {
+    background-color: var(--pokemon-type-normal);
+}
+
+.background-color-pokemon-grass {
+    background-color: var(--pokemon-type-grass);
+}
+
+.background-color-pokemon-ground {
+    background-color: var(--pokemon-type-ground);
+}
+
+.background-color-pokemon-ice {
+    background-color: var(--pokemon-type-ice);
+}
+
+.background-color-pokemon-poison {
+    background-color: var(--pokemon-type-poison);
+}
+
+.background-color-pokemon-psychic {
+    background-color: var(--pokemon-type-psychic);
+}
+
+.background-color-pokemon-rock {
+    background-color: var(--pokemon-type-rock);
+}
+
+.background-color-pokemon-steel {
+    background-color: var(--pokemon-type-steel);
+}
+
+.background-color-pokemon-water {
+    background-color: var(--pokemon-type-water);
+}
+
+.background-color-grayscale-dark {
+    background-color: var(--grayscale-dark)
+}
+
+.background-color-grayscale-medium {
+    background-color: var(--grayscale-medium)
+}
+
+.background-color-grayscale-light {
+    background-color: var(--grayscale-light)
+}
+
+.background-color-grayscale-background {
+    background-color: var(--grayscale-background)
+}
+
+.background-color-grayscale-white {
+    background-color: var(--grayscale-white)
+}
+
+
+
+.fill-color-pokemon-bug {
+    fill: var(--pokemon-type-bug);
+}
+
+.fill-color-pokemon-bug {
+    fill: var(--pokemon-type-bug);
+}
+
+.fill-color-pokemon-dark {
+    fill: var(--pokemon-type-dark);
+}
+
+.fill-color-pokemon-dragon {
+    fill: var(--pokemon-type-dragon);
+}
+
+.fill-color-pokemon-electric {
+    fill: var(--pokemon-type-electric);
+}
+
+.fill-color-pokemon-fairy {
+    fill: var(--pokemon-type-fairy);
+}
+
+.fill-color-pokemon-fighting {
+    fill: var(--pokemon-type-fighting);
+}
+
+.fill-color-pokemon-fire {
+    fill: var(--pokemon-type-fire);
+}
+
+.fill-color-pokemon-flying {
+    fill: var(--pokemon-type-flying);
+}
+
+.fill-color-pokemon-ghost {
+    fill: var(--pokemon-type-ghost);
+}
+
+.fill-color-pokemon-normal {
+    fill: var(--pokemon-type-normal);
+}
+
+.fill-color-pokemon-grass {
+    fill: var(--pokemon-type-grass);
+}
+
+.fill-color-pokemon-ground {
+    fill: var(--pokemon-type-ground);
+}
+
+.fill-color-pokemon-ice {
+    fill: var(--pokemon-type-ice);
+}
+
+.fill-color-pokemon-poison {
+    fill: var(--pokemon-type-poison);
+}
+
+.fill-color-pokemon-psychic {
+    fill: var(--pokemon-type-psychic);
+}
+
+.fill-color-pokemon-rock {
+    fill: var(--pokemon-type-rock);
+}
+
+.fill-color-pokemon-steel {
+    fill: var(--pokemon-type-steel);
+}
+
+.fill-color-pokemon-water {
+    fill: var(--pokemon-type-water);
+}
+
+.fill-color-grayscale-dark {
+    fill: var(--grayscale-dark)
+}
+
+.fill-color-grayscale-medium {
+    fill: var(--grayscale-medium)
+}
+
+.fill-color-grayscale-light {
+    fill: var(--grayscale-light)
+}
+
+.fill-color-grayscale-background {
+    fill: var(--grayscale-background)
+}
+
+.fill-color-grayscale-white {
+    fill: var(--grayscale-white)
+}

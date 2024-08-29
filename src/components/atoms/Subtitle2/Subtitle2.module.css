@@ -1,0 +1,5 @@
+.subtitle2 {
+    font-style: normal;
+    font-weight: var(--header-subtitle2-weight);
+    font-size: var(--header-subtitle2-size);
+}

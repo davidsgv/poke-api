@@ -1,0 +1,5 @@
+.caption {
+    font-style: normal;
+    font-weight: var(--body--caption-weight);
+    font-size: var(--body--caption-size);
+}

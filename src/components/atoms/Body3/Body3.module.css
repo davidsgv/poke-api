@@ -1,0 +1,5 @@
+.body3 {
+    font-style: normal;
+    font-weight: var(--body--body3-weight);
+    font-size: var(--body--body3-size);
+}

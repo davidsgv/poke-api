@@ -1,0 +1,11 @@
+name: pokeapi
+
+services:
+  development:
+    build: ./
+    volumes:
+      - type: bind
+        source: ../
+        target: /src
+    stdin_open: true
+    tty: true

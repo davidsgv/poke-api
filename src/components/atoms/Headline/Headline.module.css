@@ -1,0 +1,5 @@
+.headline {
+    font-style: normal;
+    font-weight: var(--header-headline-weight);
+    font-size: var(--header-headline-size);
+}

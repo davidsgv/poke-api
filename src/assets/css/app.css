@@ -1,0 +1,88 @@
+:root {
+  font-family: "Poppins", sans-serif;
+
+  --identity: #DC0A2D;
+
+  --pokemon-type-bug: #A7B723;
+  --pokemon-type-dark: #75574C;
+  --pokemon-type-dragon: #7037FF;
+  --pokemon-type-electric: #F9CF30;
+  --pokemon-type-fairy: #E69EAC;
+  --pokemon-type-fighting: #C12239;
+  --pokemon-type-fire: #F57D31;
+  --pokemon-type-flying: #A891EC;
+  --pokemon-type-ghost: #70559B;
+  --pokemon-type-normal: #AAA67F;
+  --pokemon-type-grass: #74CB48;
+  --pokemon-type-ground: #DEC16B;
+  --pokemon-type-ice: #9AD6DF;
+  --pokemon-type-poison: #A43E9E;
+  --pokemon-type-psychic: #FB5584;
+  --pokemon-type-rock: #B69E31;
+  --pokemon-type-steel: #B7B9D0;
+  --pokemon-type-water: #6493EB;
+
+  --grayscale-dark: #212121;
+  --grayscale-medium: #666666;
+  --grayscale-light: #E0E0E0;
+  --grayscale-background: #EFEFEF;
+  --grayscale-white: #FFFFFF;
+
+  --header-headline-weight: 700;
+  --header-headline-size: 24px;
+  --header-subtitle1-weight: 700;
+  --header-subtitle1-size: 14px;
+  --header-subtitle2-weight: 700;
+  --header-subtitle2-size: 12px;
+  --header-subtitle3-weight: 700;
+  --header-subtitle3-size: 10px;
+
+  --body--body1-weight: normal;
+  --body--body1-size: 14px;
+  --body--body2-weight: normal;
+  --body--body2-size: 12px;
+  --body--body3-weight: normal;
+  --body--body3-size: 10px;
+  --body--caption-weight: normal;
+  --body--caption-size: 8px;
+
+
+
+  /* --header-headline-weight: 700;
+  --header-headline-size: 32px;
+  --header-subtitle1-weight: 700;
+  --header-subtitle1-size: 16px;
+  --header-subtitle2-weight: 700;
+  --header-subtitle2-size: 16px;
+  --header-subtitle3-weight: 700;
+  --header-subtitle3-size: 16px;
+
+  --body--body1-weight: normal;
+  --body--body1-size: 16px;
+  --body--body2-weight: normal;
+  --body--body2-size: 16px;
+  --body--body3-weight: normal;
+  --body--body3-size: 16px;
+  --body--caption-weight: normal;
+  --body--caption-size: 12px; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  max-width: 700px;
+}

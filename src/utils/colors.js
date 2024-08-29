@@ -1,0 +1,81 @@
+const ColorsClass = {
+    bug: "color-pokemon-bug",
+    dark: "color-pokemon-dark",
+    dragon: "color-pokemon-dragon",
+    electric: "color-pokemon-electric",
+    fairy: "color-pokemon-fairy",
+    fighting: "color-pokemon-fighting",
+    flying: "color-pokemon-flying",
+    ghost: "color-pokemon-ghost",
+    normal: "color-pokemon-normal",
+    grass: "color-pokemon-grass",
+    ground: "color-pokemon-ground",
+    ice: "color-pokemon-ice",
+    poison: "color-pokemon-poison",
+    psychic: "color-pokemon-psychic",
+    rock: "color-pokemon-rock",
+    steel: "color-pokemon-steel",
+    water: "color-pokemon-water",
+    grayscaleDark: "color-grayscale-dark",
+    grayscaleMedium: "color-grayscale-medium",
+    grayscaleLight: "color-grayscale-light",
+    grayscaleBackground: "color-grayscale-background",
+    grayscaleWhite: "color-grayscale-white",
+};
+
+const BackgroundColorsClass = {
+    bug: "background-color-pokemon-bug",
+    dark: "background-color-pokemon-dark",
+    dragon: "background-color-pokemon-dragon",
+    electric: "background-color-pokemon-electric",
+    fairy: "background-color-pokemon-fairy",
+    fighting: "background-color-pokemon-fighting",
+    flying: "background-color-pokemon-flying",
+    ghost: "background-color-pokemon-ghost",
+    normal: "background-color-pokemon-normal",
+    grass: "background-color-pokemon-grass",
+    ground: "background-color-pokemon-ground",
+    ice: "background-color-pokemon-ice",
+    poison: "background-color-pokemon-poison",
+    psychic: "background-color-pokemon-psychic",
+    rock: "background-color-pokemon-rock",
+    steel: "background-color-pokemon-steel",
+    water: "background-color-pokemon-water",
+    grayscaleDark: "background-color-grayscale-dark",
+    grayscaleMedium: "background-grayscale-medium",
+    grayscaleLight: "background-color-grayscale-light",
+    grayscaleBackground: "background-color-grayscale-background",
+    grayscaleWhite: "background-color-grayscale-white",
+};
+
+const FillColorsClass = {
+    bug: "fill-color-pokemon-bug",
+    dark: "fill-color-pokemon-dark",
+    dragon: "fill-color-pokemon-dragon",
+    electric: "fill-color-pokemon-electric",
+    fairy: "fill-color-pokemon-fairy",
+    fighting: "fill-color-pokemon-fighting",
+    flying: "fill-color-pokemon-flying",
+    ghost: "fill-color-pokemon-ghost",
+    normal: "fill-color-pokemon-normal",
+    grass: "fill-color-pokemon-grass",
+    ground: "fill-color-pokemon-ground",
+    ice: "fill-color-pokemon-ice",
+    poison: "fill-color-pokemon-poison",
+    psychic: "fill-color-pokemon-psychic",
+    rock: "fill-color-pokemon-rock",
+    steel: "fill-color-pokemon-steel",
+    water: "fill-color-pokemon-water",
+    grayscaleDark: "fill-color-grayscale-dark",
+    grayscaleMedium: "fill-grayscale-medium",
+    grayscaleLight: "fill-color-grayscale-light",
+    grayscaleBackground: "fill-color-grayscale-background",
+    grayscaleWhite: "fill-color-grayscale-white",
+};
+
+
+Object.freeze(FillColorsClass)
+Object.freeze(ColorsClass)
+Object.freeze(BackgroundColorsClass)
+
+export {ColorsClass, BackgroundColorsClass, FillColorsClass}

@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.bar {
+    border-radius: 30px;
+    display: block;
+    opacity: 0.2;
+    width: 100%;
+    transition: background-color 500ms ease-in-out;
+}
+
+.fill {
+    border-radius: 30px;
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 500ms ease-in-out, background-color 500ms ease-in-out;
+}

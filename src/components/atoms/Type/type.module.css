@@ -1,0 +1,7 @@
+.type {
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: var(--header-subtitle3-weight);
+    font-size: var(--header-subtitle3-size);
+    padding: 2px 8px;
+}
