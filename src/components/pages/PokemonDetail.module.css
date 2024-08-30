@@ -1,11 +1,14 @@
 .page {
     padding: 5%;
     position: relative;
+    transition: background-color 500ms ease-in-out;
 }
 
 .title {
     margin: auto;
+    position: relative;
     width: 90%;
+    z-index: 1;
 }
 
 .pokeball {

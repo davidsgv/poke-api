@@ -1,67 +1,62 @@
+import { useEffect, useState } from "react"
 import { BackgroundColorsClass, ColorsClass, FillColorsClass } from "../../utils/colors"
 import PokeBall from "../atoms/icons/PokeBall"
 import PokemonCard from "../organisms/PokemonCard/PokemonCard"
 import PokemonDetailTitle from "../organisms/PokemonDetailTitle/PokemonDetailTitle"
 import css from './PokemonDetail.module.css'
+import { GetPokemonById } from "../../services/pokemonservices"
 
 const types = [
-  {
-    background: BackgroundColorsClass.bug,
-    text: "bug"
-  },
-  {
-    background: BackgroundColorsClass.dark,
-    text: "dark"
-  }
-]
-
-const stats = [
-  {
-    stat: "HP",
-    value: 45,
-  },
-  {
-    stat: "ATK",
-    value: 60,
-  },
-  {
-    stat: "DEF",
-    value: 49,
-  },
-  {
-    stat: "SATK",
-    value: 65,
-  },
-  {
-    stat: "SDEF",
-    value: 65,
-  },
-  {
-    stat: "SPD",
-    value: 45,
-  }
+    {
+        background: BackgroundColorsClass.bug,
+        text: "bug"
+    },
+    {
+        background: BackgroundColorsClass.dark,
+        text: "dark"
+    }
 ]
 
 export default function PokemonDetail() {
-  const background = BackgroundColorsClass.grass;
+    const [pokemon, setPokemon] = useState()
 
-  return (
-    <div className={`${css.page} ${background}`}>
-      <div className={css.title}>
-        <PokemonDetailTitle
-          fill={FillColorsClass.grayscaleWhite}
-          color={ColorsClass.grayscaleWhite}
-          id="999"
-          name="Bulbasaur"
-        />
-      </div>
+    const background = BackgroundColorsClass[pokemon?.types[0]];
+    const color = ColorsClass[pokemon?.types[0]]
+    const fill = FillColorsClass[pokemon?.types[0]]
 
-      <div className={css.pokeball}>
-        <PokeBall width={300} height={300} fill={FillColorsClass.grayscaleWhite} />
-      </div>
+    useEffect(() => {
+        GetPokemonById(150)
+            .then((data) => {
+                setPokemon(data);
+                console.log(data)
+            })
+    }, []);
 
-      <PokemonCard color={ColorsClass.dark} background={BackgroundColorsClass.dark} types={types} stats={stats} />
+    return (
+        <div className={`${css.page} ${background}`}>
+            <div className={css.title}>
+                <PokemonDetailTitle
+                    fill={FillColorsClass.grayscaleWhite}
+                    color={ColorsClass.grayscaleWhite}
+                    id={pokemon?.id}
+                    name={pokemon?.name}
+                />
+            </div>
 
-    </div>
-  )
+            <div className={css.pokeball}>
+                <PokeBall width={300} height={300} fill={FillColorsClass.grayscaleWhite} />
+            </div>
+
+            <PokemonCard
+                sprite={pokemon?.sprite}
+                color={color}
+                background={background}
+                description={pokemon?.description}
+                types={pokemon?.types}
+                stats={pokemon?.stats}
+                moves={pokemon?.moves}
+            />
+
+        </div>
+    )
 }

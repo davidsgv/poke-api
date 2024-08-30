@@ -1,5 +1,6 @@
 import Type from "../../atoms/Type/Type"
 import css from './TypeGroup.module.css'
+import { BackgroundColorsClass } from "../../../utils/colors"
 
 /**
  * Componente TypeGroup que renderiza un grupo de badges con colores de fondo personalizados.
@@ -12,7 +13,7 @@ export default function TypeGroup(props) {
 
     return (
         <div className={css.container}>
-            {types?.map((element, index) => <Type key={index} background={element.background}>{element.text}</Type>)}
+            {types?.map((element, index) => <Type key={index} background={BackgroundColorsClass[element]}>{element}</Type>)}
         </div>
     )
 }
