@@ -3,8 +3,10 @@ import PokeBall from "../../atoms/icons/PokeBall"
 import PokemonDetailCard from "../../organisms/PokemonDetailCard/PokemonDetailCard"
 import PokemonDetailTitle from "../../organisms/PokemonDetailTitle/PokemonDetailTitle"
 import { GetPokemonById } from "../../../services/pokemonservices"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import MainLayout from "../../layout/MainLayout/MainLayout"
+import LeftArrow from "../../atoms/icons/LeftArrow"
+import RightArrow from "../../atoms/icons/RightArrow"
 import css from './PokemonDetail.module.css'
 
 /**
@@ -25,9 +27,20 @@ export async function pokemonDetailLoader({ params }) {
 export default function PokemonDetail() {
     const { pokemon } = useLoaderData()
 
+    const navigate = useNavigate()
+
     const background = BackgroundColorsClass[pokemon?.types[0]];
     const color = ColorsClass[pokemon?.types[0]]
     //const fill = FillColorsClass[pokemon?.types[0]]
+
+
+    const handleLeftClick = () => {
+        navigate(`/${pokemon.id - 1}`);
+    }
+
+    const handleRightClick = () => {
+        navigate(`/${pokemon.id + 1}`);
+    }
 
     return (
         <MainLayout background={background}>
@@ -42,6 +55,11 @@ export default function PokemonDetail() {
 
             <div className={css.pokeball}>
                 <PokeBall width={150} height={150} fill={FillColorsClass.grayscaleWhite} />
+            </div>
+
+            <div className={css.control}>
+                <LeftArrow height={100} width={100} fill={FillColorsClass.grayscaleWhite} onClick={handleLeftClick} />
+                <RightArrow height={100} width={100} fill={FillColorsClass.grayscaleWhite} onClick={handleRightClick} />
             </div>
 
             <PokemonDetailCard

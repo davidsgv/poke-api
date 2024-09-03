@@ -2,7 +2,7 @@
     background-color: var(--grayscale-white);
     border-radius: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
     gap: 25px;
     justify-content: center;
     margin-top: 50px;

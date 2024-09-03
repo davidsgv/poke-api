@@ -16,37 +16,30 @@ async function GetPokemonById(id) {
     return pokemon;
 }
 
-async function CountPokemon(){
-    const key = `pokemonCount`;
-    
-    
-    var cacheCount = localStorage.getItem(key);
-    if (cacheCount) return parseInt(cacheCount);
-
-    const count = await fetchCountPokemon
-    if(count > 0){
-        localStorage.setItem(key, count);
-    }
-    return count;
-}
-
-async function GetAllPokemon(page){
+async function GetAllPokemon(){
     //storage key
-    const key = `pokemonList${page}`;
+    const key = `allPokemon`;
 
     //load from cache
     const cachePokemon = JSON.parse(localStorage.getItem(key))
     if (cachePokemon) return cachePokemon;
-    
-    //load from api
-    const pokemons = await fetchAllPokemon(page);
-    if(pokemons != {}){
-        const pokemonsDetail = await Promise.all(pokemons.results?.map((element)=>{
-            return fetchPokemonDataByUrl(element?.url)
-        }));
 
-        localStorage.setItem(key, JSON.stringify(pokemonsDetail));
-        return pokemonsDetail
+    //load from api
+    const pokemons = await fetchAllPokemon();
+    if(pokemons != {}){
+        const pokemonList = pokemons?.results?.map((element)=>{
+            return {
+                ...element,
+                id: element?.url?.split("/")[6]
+            }
+        })
+
+        const formatPokemons = {
+            ...pokemons,
+            results: pokemonList
+        }
+        localStorage.setItem(key, JSON.stringify(formatPokemons));
+        return formatPokemons;
     }
 
     return pokemons
@@ -86,10 +79,8 @@ async function fetchPokemonDataByUrl(url){
     return formatPokemonDataById(pokemonData, specieData);
 }
 
-async function fetchAllPokemon(page){
-    const limit = 12
-    const offset = (page-1) * 12
-    const endPoint = `${URL}pokemon?limit=${limit}&offset=${offset}`;
+async function fetchAllPokemon(){
+    const endPoint = `${URL}pokemon?limit=10000`;
 
     try {
         const response = await fetch(endPoint);
@@ -100,21 +91,6 @@ async function fetchAllPokemon(page){
     } catch (error) {
         console.error("Error en la petición a la API:", error)
         return {}
-    }
-}
-
-async function fetchCountPokemon() {
-    const endPoint = `${URL}pokemon?limit=1`;
-
-    try {
-        const response = await fetch(endPoint);
-        if(!response.ok){
-            throw new Error("Error al obtener los datos");
-        }
-        return await response.json()?.count;
-    } catch (error) {
-        console.error("Error en la petición a la API:", error)
-        return 0
     }
 }
 
