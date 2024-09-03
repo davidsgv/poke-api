@@ -11,10 +11,15 @@ import css from "./Progress.module.css";
 export default function Progress(props) {
     const { background, value, height } = props;
 
+    var realValue = value;
+    if (realValue > 100) {
+        realValue = 100;
+    }
+
     return (
         <div className={css.container}>
             <span className={`${background} ${css.bar}`} style={{ height: height }}></span>
-            <span className={`${background} ${css.fill}`} style={{ width: value + "%", height: height }}></span>
+            <span className={`${background} ${css.fill}`} style={{ width: realValue + "%", height: height }}></span>
         </div>
     );
 }

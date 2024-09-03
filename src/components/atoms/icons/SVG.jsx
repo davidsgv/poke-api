@@ -8,14 +8,21 @@
  * @param {string} [props.viewBox] - Atributo `viewBox` del SVG que define la posición y dimensión del dibujo.
  * @param {React.ReactNode} [props.children] - Contenido dentro del SVG, como otros elementos SVG.
  */
+
 export default function SVG(props) {
-    const { fill, width = "30px", height = "30px", viewBox, children, xmlns } = props
+    const { fill, width = "30px", height = "30px", viewBox, children, xmlns, onClick } = props
+
+    var style = {}
+    if (onClick) style.cursor = "pointer"
+
     return (
         <svg className={fill}
             xmlns={xmlns}
             height={height}
             viewBox={viewBox}
             width={width}
+            onClick={onClick}
+            style={style}
         >
             {children}
         </svg>

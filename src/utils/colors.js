@@ -1,4 +1,5 @@
 const ColorsClass = {
+    identity: "color-identity",
     bug: "color-pokemon-bug",
     dark: "color-pokemon-dark",
     dragon: "color-pokemon-dragon",
@@ -25,6 +26,7 @@ const ColorsClass = {
 };
 
 const BackgroundColorsClass = {
+    identity: "background-color-identity",
     bug: "background-color-pokemon-bug",
     dark: "background-color-pokemon-dark",
     dragon: "background-color-pokemon-dragon",
@@ -51,6 +53,7 @@ const BackgroundColorsClass = {
 };
 
 const FillColorsClass = {
+    identity: "fill-color-identity",
     bug: "fill-color-pokemon-bug",
     dark: "fill-color-pokemon-dark",
     dragon: "fill-color-pokemon-dragon",
@@ -70,7 +73,7 @@ const FillColorsClass = {
     steel: "fill-color-pokemon-steel",
     water: "fill-color-pokemon-water",
     grayscaleDark: "fill-color-grayscale-dark",
-    grayscaleMedium: "fill-grayscale-medium",
+    grayscaleMedium: "fill-color-grayscale-medium",
     grayscaleLight: "fill-color-grayscale-light",
     grayscaleBackground: "fill-color-grayscale-background",
     grayscaleWhite: "fill-color-grayscale-white",

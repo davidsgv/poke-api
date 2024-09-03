@@ -1,3 +1,7 @@
+.color-identity {
+    color: var(--identity);
+}
+
 .color-pokemon-bug {
     color: var(--pokemon-type-bug);
 }
@@ -91,6 +95,10 @@
 }
 
 
+
+.background-color-identity {
+    background-color: var(--identity);
+}
 
 .background-color-pokemon-bug {
     background-color: var(--pokemon-type-bug);
@@ -189,6 +197,9 @@
 }
 
 
+.fill-color-identity {
+    fill: var(--identity);
+}
 
 .fill-color-pokemon-bug {
     fill: var(--pokemon-type-bug);

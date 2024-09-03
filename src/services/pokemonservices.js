@@ -16,14 +16,53 @@ async function GetPokemonById(id) {
     return pokemon;
 }
 
+async function CountPokemon(){
+    const key = `pokemonCount`;
+    
+    
+    var cacheCount = localStorage.getItem(key);
+    if (cacheCount) return parseInt(cacheCount);
+
+    const count = await fetchCountPokemon
+    if(count > 0){
+        localStorage.setItem(key, count);
+    }
+    return count;
+}
+
+async function GetAllPokemon(page){
+    //storage key
+    const key = `pokemonList${page}`;
+
+    //load from cache
+    const cachePokemon = JSON.parse(localStorage.getItem(key))
+    if (cachePokemon) return cachePokemon;
+    
+    //load from api
+    const pokemons = await fetchAllPokemon(page);
+    if(pokemons != {}){
+        const pokemonsDetail = await Promise.all(pokemons.results?.map((element)=>{
+            return fetchPokemonDataByUrl(element?.url)
+        }));
+
+        localStorage.setItem(key, JSON.stringify(pokemonsDetail));
+        return pokemonsDetail
+    }
+
+    return pokemons
+}
+
 async function fetchPokemonById(id) {
     const pokemonEndPoint = `${URL}pokemon/${id}`;
-    const SpecieEndPoint = `${URL}pokemon-species/${id}`;
+    return fetchPokemonDataByUrl(pokemonEndPoint);
+}
 
-    var pokemonData, specieData
+async function fetchPokemonDataByUrl(url){
+    //id, name, description, img, weight, height, types, moves, stats
+    var pokemonData, specieData;
 
     try {
-        const response = await fetch(pokemonEndPoint);
+        const response = await fetch(url);
         if(!response.ok){
             throw new Error("Error al obtener los datos");
         }
@@ -34,7 +73,7 @@ async function fetchPokemonById(id) {
     }
 
     try {
-        const response = await fetch(SpecieEndPoint);
+        const response = await fetch(pokemonData?.species.url);
         if(!response.ok){
             throw new Error("Error al obtener los datos");
         }
@@ -44,18 +83,56 @@ async function fetchPokemonById(id) {
         return {}
     }
 
-    return formatApiPokemonData(pokemonData, specieData);
+    return formatPokemonDataById(pokemonData, specieData);
+}
+
+async function fetchAllPokemon(page){
+    const limit = 12
+    const offset = (page-1) * 12
+    const endPoint = `${URL}pokemon?limit=${limit}&offset=${offset}`;
+
+    try {
+        const response = await fetch(endPoint);
+        if(!response.ok){
+            throw new Error("Error al obtener los datos");
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Error en la petición a la API:", error)
+        return {}
+    }
+}
+
+async function fetchCountPokemon() {
+    const endPoint = `${URL}pokemon?limit=1`;
+
+    try {
+        const response = await fetch(endPoint);
+        if(!response.ok){
+            throw new Error("Error al obtener los datos");
+        }
+        return await response.json()?.count;
+    } catch (error) {
+        console.error("Error en la petición a la API:", error)
+        return 0
+    }
 }
 
 //formats the api response to only the necessary data
-function formatApiPokemonData(pokemon, specie){
+function formatPokemonDataById(pokemon, specie){
     var format = {
         id: pokemon.id,
         name: pokemon.name,
         sprite: pokemon.sprites?.other["dream_world"]["front_default"],
-        weight: pokemon.weight,
-        height: pokemon.height,
+        info: {
+            weight: pokemon.weight,
+            height: pokemon.height,
+        }
     };
+
+    if(!format.sprite){
+        format.sprite = pokemon.sprites?.other["official-artwork"]["front_default"];
+    }
 
     format.types = pokemon?.types?.map((element)=>{
         return element.type.name;
@@ -68,8 +145,29 @@ function formatApiPokemonData(pokemon, specie){
     format.moves = moves;
 
     format.stats = pokemon?.stats?.map((element)=>{
+        var name;
+        switch(element?.stat?.name){
+            case "hp":
+                name = "HP";
+                break;
+            case "attack":
+                name = "ATK";
+                break;
+            case "defense":
+                name = "DEF";
+                break;
+            case "special-attack":
+                name = "SATK";
+                break;
+            case "special-defense":
+                name = "SDEF";
+                break;
+            case "speed":
+                name = "SPD";
+                break;
+        }
         return {
-            stat: element.stat.name,
+            stat: name,
             value: element["base_stat"]
         };
     });
@@ -86,4 +184,4 @@ function formatApiPokemonData(pokemon, specie){
     return format;
 }
 
-export {GetPokemonById}
+export {GetPokemonById, GetAllPokemon}

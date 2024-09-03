@@ -1,6 +1,7 @@
 .card {
     align-items: center;
     background-color: var(--grayscale-white);
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     gap: 25px;

@@ -82,3 +82,10 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.page {
+  min-height: 100%;
+  padding: 2% 5%;
+  position: relative;
+  transition: background-color 500ms ease-in-out;
+}

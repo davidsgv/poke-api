@@ -13,13 +13,14 @@
 
 .box {
     align-items: center;
+    border-left: solid var(--grayscale-light) 1px;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     height: 100%;
     justify-items: center;
-    border-left: solid var(--grayscale-light) 1px;
+    text-align: center;
 }
 
 .grid .box:first-child {

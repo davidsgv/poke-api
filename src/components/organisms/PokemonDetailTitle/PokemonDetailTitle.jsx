@@ -1,15 +1,22 @@
+import { useNavigate } from "react-router-dom"
+import ArrowBack from "../../atoms/icons/ArrowBack"
 import Number from "../../atoms/Number/Number"
-import ArrowBackTitle from "../../molecules/BackArrowTitle/ArrowBackTitle"
+import IconTitle from "../../molecules/IconTitle/IconTitle"
 import css from './PokemonDetailTitle.module.css'
 
 export default function PokemonDetailTitle(props) {
     const { color, fill, id, name } = props
 
+    const navigate = useNavigate()
+    const handleClick = () => {
+        navigate("/");
+    }
+
     return (
         <div className={css.container}>
-            <ArrowBackTitle fill={fill} color={color}>
+            <IconTitle fill={fill} color={color} Icon={ArrowBack} onClickIcon={handleClick}>
                 {name}
-            </ArrowBackTitle>
+            </IconTitle>
             <Number color={color} fill={fill}>{id}</Number>
         </div>
     )

@@ -1,4 +1,4 @@
-import Subtitle2 from "../Subtitle2/Subtitle2"
+import Subtitle1 from "../Subtitle1/Subtitle1"
 import Tag from '../icons/Tag'
 import css from './Number.module.css'
 
@@ -12,12 +12,12 @@ import css from './Number.module.css'
  */
 export default function Number(props) {
     const { children, color, fill } = props
-    const size = "12px";
+    const size = "17px";
 
     return (
         <div className={css.container}>
             <Tag fill={fill} width={size} height={size} />
-            <Subtitle2 color={color}>{children}</Subtitle2>
+            <Subtitle1 color={color}>{children}</Subtitle1>
         </div>
     )
 }
